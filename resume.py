@@ -8,7 +8,7 @@ app.config['UPLOAD_FOLDER'] = os.path.join(os.path.dirname(__file__), 'uploads')
 os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 
 # 🔑 Google Gemini API Key — Replace this with your actual key
-genai.configure(api_key="AIzaSyDc_oVuZpTNi6OBV40W420zDmjU2Rhjdo8")
+genai.configure(api_key=os.environ.get("GEMINI_API_KEY"))
 model = genai.GenerativeModel("models/gemini-1.5-pro")
 
 # 📄 PDF Text Extractor
